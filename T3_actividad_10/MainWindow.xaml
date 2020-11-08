@@ -5,40 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:T3_actividad_10"
         mc:Ignorable="d"
-        Title="Mosaico" Height="660.309" Width="670.057" MinWidth="450" MinHeight="450" Icon="mosaico.ico">
+        Title="Visor de imágenes" Height="595.349" Width="695.349" MinWidth="695.349" MinHeight="595.349" Icon="visor_imagenes.ico">
     <Window.Resources>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="IsHitTestVisible" Value="False"/>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5"/>
         </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="Orange" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="Orange"/>
-            <Setter Property="BorderBrush" Value="Orange"/>
+        <Style TargetType="{x:Type Button}" x:Key="Top_Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="DockPanel.Dock" Value="Top"/>
         </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="Green" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="Green"/>
-            <Setter Property="BorderBrush" Value="Green"/>
+        <Style TargetType="{x:Type Button}" x:Key="Bottom_Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="DockPanel.Dock" Value="Bottom"/>
         </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="Red" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="Red"/>
-            <Setter Property="BorderBrush" Value="Red"/>
+        <Style TargetType="{x:Type TextBlock}" x:Key="Bottom_TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Rubik"/>
+            <Setter Property="Margin" Value="5"/>
         </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="Pink" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="Pink"/>
-            <Setter Property="BorderBrush" Value="Pink"/>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="130"/>
+            <Setter Property="Source" Value="Resources/episodioIV.jpg"/>
         </Style>
     </Window.Resources>
     <Grid>
-        <DockPanel LastChildFill="True">
-            <TextBox Height="100" DockPanel.Dock="Top" Style="{StaticResource Orange}"/>
-            <TextBox Width="100" DockPanel.Dock="Left" Style="{StaticResource Orange}"/>
-            <TextBox Width="100" DockPanel.Dock="Right" Style="{StaticResource Green}"/>
-            <TextBox Height="100" DockPanel.Dock="Bottom" Style="{StaticResource Green}"/>
-            <TextBox Width="100" DockPanel.Dock="Left" Style="{StaticResource Red}"/>
-            <TextBox Height="100" DockPanel.Dock="Bottom" Style="{StaticResource Red}"/>
-            <TextBox Width="100" DockPanel.Dock="Right" Style="{StaticResource Pink}"/>
-            <TextBox Height="100" DockPanel.Dock="Top" Style="{StaticResource Pink}"/>
-            <TextBox  Background="Black" BorderBrush="Black" />
+        <DockPanel LastChildFill="True" Margin="0,10,10,10">
+            <DockPanel LastChildFill="False" DockPanel.Dock="Bottom"  Height="70" Background="LightBlue" Margin="10,30,0,0">
+                <TextBlock DockPanel.Dock="Left" Text="Nº de imágenes: 10" Style="{StaticResource Bottom_TextBlock}" />
+                <TextBlock DockPanel.Dock="Right" Text="Diseñado por Marcos Ruiz" Style="{StaticResource Bottom_TextBlock}"/>
+            </DockPanel>
+            <Border DockPanel.Dock="Right" CornerRadius="3" BorderThickness="3" BorderBrush="Black"  Width="130" Background="LightGreen" >
+                <DockPanel LastChildFill="False">
+                    <Button Content="Añadir imagen"  Style="{StaticResource Top_Button}"/>
+                    <Button Content="Eliminar imagen"  Style="{StaticResource Top_Button}"/>
+                    <Button Content="Eliminar todas"  Style="{StaticResource Top_Button}"/>
+                    <Button Content="Recortar"  Style="{StaticResource Bottom_Button}"/>
+                    <Button Content="Rotar"  Style="{StaticResource Bottom_Button}"/>
+                </DockPanel>
+            </Border>
+            <StackPanel Margin="0,0,10,0">
+                <TextBlock TextWrapping="Wrap" Text="Visor de imágenes" FontSize="40" FontFamily="Rubik" TextAlignment="Center"/>
+                <WrapPanel>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                    <Image/>
+                </WrapPanel>
+            </StackPanel>
         </DockPanel>
-
     </Grid>
 </Window>

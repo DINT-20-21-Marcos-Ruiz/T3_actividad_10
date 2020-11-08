@@ -35,11 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>mosaico.ico</ApplicationIcon>
+    <ApplicationIcon>visor_imagenes.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -99,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="mosaico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="visor_imagenes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\episodioIV.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
