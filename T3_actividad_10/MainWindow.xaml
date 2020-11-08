@@ -1,0 +1,44 @@
+﻿<Window x:Class="T3_actividad_10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:T3_actividad_10"
+        mc:Ignorable="d"
+        Title="Mosaico" Height="660.309" Width="670.057" MinWidth="450" MinHeight="450" Icon="mosaico.ico">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="IsHitTestVisible" Value="False"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="Orange" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="BorderBrush" Value="Orange"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="Green" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="BorderBrush" Value="Green"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="Red" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="BorderBrush" Value="Red"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="Pink" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="BorderBrush" Value="Pink"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <TextBox Height="100" DockPanel.Dock="Top" Style="{StaticResource Orange}"/>
+            <TextBox Width="100" DockPanel.Dock="Left" Style="{StaticResource Orange}"/>
+            <TextBox Width="100" DockPanel.Dock="Right" Style="{StaticResource Green}"/>
+            <TextBox Height="100" DockPanel.Dock="Bottom" Style="{StaticResource Green}"/>
+            <TextBox Width="100" DockPanel.Dock="Left" Style="{StaticResource Red}"/>
+            <TextBox Height="100" DockPanel.Dock="Bottom" Style="{StaticResource Red}"/>
+            <TextBox Width="100" DockPanel.Dock="Right" Style="{StaticResource Pink}"/>
+            <TextBox Height="100" DockPanel.Dock="Top" Style="{StaticResource Pink}"/>
+            <TextBox  Background="Black" BorderBrush="Black" />
+        </DockPanel>
+
+    </Grid>
+</Window>
